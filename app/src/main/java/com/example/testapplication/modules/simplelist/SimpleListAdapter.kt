@@ -76,6 +76,11 @@ class SimpleListAdapter(private val listener: InteractionsListener? = null) : Re
         var isInteractionActive = false
 
         private lateinit var currentModel: SimpleModel
+
+        private val defaultElevation = 4f
+        private val raisedElevation = 60f
+        private val minElevation = 1f
+        private val maxElevation = 100f
         private val zAnimation: SpringAnimation by lazy { initZAnimation() }
 
         init {
@@ -90,11 +95,11 @@ class SimpleListAdapter(private val listener: InteractionsListener? = null) : Re
         }
 
         fun animateToDefaultElevation() {
-            zAnimation.animateToFinalPosition(4f)
+            zAnimation.animateToFinalPosition(defaultElevation)
         }
 
         fun animateToActiveElevation() {
-            zAnimation.animateToFinalPosition(60f)
+            zAnimation.animateToFinalPosition(raisedElevation)
         }
 
         override fun onClick(view: View) {
@@ -119,9 +124,9 @@ class SimpleListAdapter(private val listener: InteractionsListener? = null) : Re
 
         private fun initZAnimation(): SpringAnimation {
             return SpringAnimation(cardView, DynamicAnimation.TRANSLATION_Z)
-                .setMinValue(1f)
-                .setMaxValue(100f)
-                .setStartValue(4f)
+                .setMinValue(minElevation)
+                .setMaxValue(maxElevation)
+                .setStartValue(defaultElevation)
                 .setSpring(
                     SpringForce()
                         .setDampingRatio(SpringForce.DAMPING_RATIO_HIGH_BOUNCY)
