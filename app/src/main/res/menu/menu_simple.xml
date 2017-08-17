@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_clear"
+        android:icon="@drawable/ic_clear_all_white_24dp"
+        app:showAsAction="always"
+        android:title="Clear"/>
+
+    <item
+        android:id="@+id/menu_add"
+        android:icon="@drawable/ic_add_white_24dp"
+        app:showAsAction="always"
+        android:title="Add"/>
+
+    <item
+        android:id="@+id/menu_sort"
+        android:icon="@drawable/ic_sort_white_24dp"
+        app:showAsAction="always"
+        android:title="Sort"/>
+
+</menu>

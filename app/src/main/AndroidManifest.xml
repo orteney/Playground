@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.testapplication">
+
+    <application
+        android:name=".TestApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".modules.splash.SplashActivity"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Splash">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".modules.main.MainActivity"
+            android:label="Main"/>
+
+        <activity
+            android:name=".modules.simplelist.SimpleListActivity"
+            android:label="SimpleList"/>
+
+        <activity
+            android:name=".modules.flexboxlist.FlexBoxListActivity"
+            android:label="FlexibleList"/>
+
+        <activity
+            android:name=".modules.textarea.TextAreaActivity"
+            android:label="TextArea"
+            android:theme="@style/DarkTheme"/>
+
+        <activity
+            android:name=".modules.textviews.TextViewsActivity"
+            android:label="TextViews"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts"/>
+
+    </application>
+
+</manifest>
