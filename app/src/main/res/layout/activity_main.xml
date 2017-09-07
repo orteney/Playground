@@ -33,12 +33,16 @@
         android:text="Show Text Views"/>
 
     <Button
+        android:id="@+id/openFileDirectoryButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Open downloads directory"/>
 
     <Button
+        android:id="@+id/showTexBoxesButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Show Text Boxes"/>
 
     <Button
         android:layout_width="wrap_content"
