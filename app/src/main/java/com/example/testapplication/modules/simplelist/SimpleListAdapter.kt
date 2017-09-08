@@ -1,18 +1,23 @@
 package com.example.testapplication.modules.simplelist
 
+import android.graphics.Typeface
 import android.support.animation.DynamicAnimation
 import android.support.animation.SpringAnimation
 import android.support.animation.SpringForce
+import android.support.v4.content.ContextCompat
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.widget.TextView
 import com.example.testapplication.R
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_simple.*
 import org.jetbrains.anko.sdk19.listeners.onClick
+import org.jetbrains.anko.textColor
 import java.util.*
 
 class SimpleListAdapter(private val listener: InteractionsListener? = null) : RecyclerView.Adapter<SimpleListAdapter.ViewHolder>(),
@@ -25,6 +30,13 @@ class SimpleListAdapter(private val listener: InteractionsListener? = null) : Re
         return ViewHolder(view, listener)
     }
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int, payloads: MutableList<Any>) {
+        if (payloads.isEmpty()) return super.onBindViewHolder(holder, position, payloads)
+
+        val newNumber = payloads[0] as? Int ?: return
+        holder.updateNumber(newNumber)
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(data[position])
     }
@@ -34,11 +46,10 @@ class SimpleListAdapter(private val listener: InteractionsListener? = null) : Re
     fun setData(data: List<SimpleModel>) {
         val diffUtilCallback = SimpleDiffCallback(this.data, data)
         val diffResult = DiffUtil.calculateDiff(diffUtilCallback)
+        diffResult.dispatchUpdatesTo(this)
 
         this.data.clear()
-        this.data.addAll(data)
-
-        diffResult.dispatchUpdatesTo(this)
+        data.mapTo(this.data) { it.copy() }
     }
 
     override fun onItemDismiss(position: Int) {
@@ -86,12 +97,35 @@ class SimpleListAdapter(private val listener: InteractionsListener? = null) : Re
         init {
             cardView.setOnTouchListener(this)
             cardView.setOnClickListener(this)
+            initTextSwitcher()
+        }
+
+        private fun initTextSwitcher() {
+            numberTextSwitcher.apply {
+                setFactory {
+                    TextView(containerView.context).apply {
+                        textSize = 14f
+                        textColor = ContextCompat.getColor(containerView.context, R.color.colorPrimary)
+                        setTypeface(null, Typeface.BOLD)
+                    }
+                }
+
+                inAnimation = AnimationUtils.loadAnimation(containerView.context, android.R.anim.fade_in)
+                    .apply { duration = 200 }
+
+                outAnimation = AnimationUtils.loadAnimation(containerView.context, android.R.anim.fade_out)
+                    .apply { duration = 200 }
+            }
         }
 
         fun bind(testModel: SimpleModel) {
             currentModel = testModel
-            idTextView.text = testModel.id
+            numberTextSwitcher.setCurrentText(testModel.number.toString())
             deleteButton.onClick { listener?.onDeleteClick(testModel) }
+        }
+
+        fun updateNumber(number: Int) {
+            numberTextSwitcher.setText(number.toString())
         }
 
         fun animateToDefaultElevation() {

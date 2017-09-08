@@ -1,3 +1,6 @@
 package com.example.testapplication.modules.simplelist
 
-class SimpleModel(val id: String)
+data class SimpleModel(
+    val id: String,
+    var number: Int
+)

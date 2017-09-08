@@ -101,6 +101,9 @@ dependencies {
     // UI
     compile 'com.github.HITGIF:TextFieldBoxes:1.1.0'
 
+    // Animations
+    compile "com.andkulikov:transitionseverywhere:1.7.5"
+
     // Test
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

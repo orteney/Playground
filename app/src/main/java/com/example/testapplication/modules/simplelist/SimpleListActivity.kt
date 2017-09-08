@@ -10,7 +10,6 @@ import com.example.testapplication.R
 import com.example.testapplication.common.Layout
 import com.example.testapplication.common.swap
 import kotlinx.android.synthetic.main.activity_simple_list.*
-import org.jetbrains.anko.design.snackbar
 import java.util.*
 
 
@@ -54,39 +53,42 @@ class SimpleListActivity : AppCompatActivity(), SimpleListAdapter.InteractionsLi
         }
     }
 
-    private fun randomModel(): SimpleModel {
-        return SimpleModel(UUID.randomUUID().toString())
-    }
-
     private fun addItem() {
         models.add(randomModel())
-        adapter.setData(models)
+        updateData()
+    }
+
+    private fun randomModel(): SimpleModel {
+        return SimpleModel(UUID.randomUUID().toString(), Random().nextInt(25))
     }
 
     private fun clearAll() {
         models.clear()
-        adapter.setData(models)
+        updateData()
     }
 
     private fun sort() {
-        models.sortBy { it.id }
-        adapter.setData(models)
+        models.sortBy { it.number }
+        updateData()
     }
 
     override fun onClick(model: SimpleModel) {
-        snackbar(rootLayout, "Clicked:\n${model.id}")
+        models.firstOrNull { it.id == model.id }?.let {
+            it.number++
+            updateData()
+        }
     }
 
     override fun onDeleteClick(model: SimpleModel) {
         models.firstOrNull { it.id == model.id }?.let {
             models.remove(it)
-            adapter.setData(models)
+            updateData()
         }
     }
 
     override fun onItemSwiped(position: Int) {
         models.removeAt(position)
-        adapter.setData(models)
+        updateData()
     }
 
     override fun onItemMoved(fromPosition: Int, toPosition: Int) {
@@ -100,6 +102,10 @@ class SimpleListActivity : AppCompatActivity(), SimpleListAdapter.InteractionsLi
             }
         }
 
+        updateData()
+    }
+
+    private fun updateData() {
         adapter.setData(models)
     }
 
