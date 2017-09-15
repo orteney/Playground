@@ -47,6 +47,7 @@ class TextBoxesActivity : AppCompatActivity() {
     private fun initViews() {
         showErrorButton.onClick { showErrors() }
         hideErrorButton.onClick { hideErrors() }
+        secondTextBox
     }
 
     private fun showErrors() {

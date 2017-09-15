@@ -49,6 +49,10 @@
             android:name=".modules.textboxes.TextBoxesActivity"
             android:label="TextBoxes"/>
 
+        <activity
+            android:name=".modules.expandablelist.ExpandableListActivity"
+            android:label="ExpandableList"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts"/>

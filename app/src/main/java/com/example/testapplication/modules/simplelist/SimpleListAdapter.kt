@@ -82,7 +82,7 @@ class SimpleListAdapter(private val listener: InteractionsListener? = null) : Re
                                                        View.OnClickListener {
 
         /*
-        * Flag that used to prevent reset to default elevation when MotionEvent.ACTION_CANCEL appears onTouch listener
+        * Flag that used to prevent reset to default elevation when MotionEvent.ACTION_CANCEL appears onTouch stateChangeListener
         * */
         var isInteractionActive = false
 

@@ -5,14 +5,15 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.example.testapplication"
-        minSdkVersion 19
+        minSdkVersion 18
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -97,12 +98,10 @@ dependencies {
     // Layouts
     compile 'com.google.android:flexbox:0.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.1.0-beta1'
+    compile 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
 
     // UI
-    compile 'com.github.HITGIF:TextFieldBoxes:1.1.0'
-
-    // Animations
-    compile "com.andkulikov:transitionseverywhere:1.7.5"
+    compile 'com.github.HITGIF:TextFieldBoxes:1.2.1'
 
     // Test
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
