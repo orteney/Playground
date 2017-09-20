@@ -17,8 +17,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:maxCharacters="20"
-        app:singleLine="true"/>
+        app:maxCharacters="20">
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"/>
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
 
     <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
         android:id="@+id/secondTextBox"
@@ -27,12 +35,20 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:hint="Я у мамы подсказка"
         app:iconSignifier="@drawable/ic_add_black_24dp"
+        app:labelText="Я у мамы подсказка"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstTextBox"
-        app:singleLine="true"/>
+        app:layout_constraintTop_toBottomOf="@+id/firstTextBox">
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"/>
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
 
     <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
         android:id="@+id/prefixTextBox"
@@ -41,12 +57,20 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:hint="Префикс"
+        app:labelText="Префикс"
         app:layout_constraintEnd_toStartOf="@+id/suffixTextBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondTextBox"
-        app:prefix="₽"
-        app:singleLine="true"/>
+        app:layout_constraintTop_toBottomOf="@+id/secondTextBox">
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            app:prefix="₽"/>
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
 
     <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
         android:id="@+id/suffixTextBox"
@@ -55,12 +79,19 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        app:hint="Суффикс"
+        app:labelText="Суффикс"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/prefixTextBox"
-        app:layout_constraintTop_toBottomOf="@+id/secondTextBox"
-        app:singleLine="true"
-        app:suffix="\@gmail.com"/>
+        app:layout_constraintTop_toBottomOf="@+id/secondTextBox">
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            app:suffix="₽"/>
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
 
     <Button
         android:id="@+id/showErrorButton"
@@ -68,7 +99,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Show Errors"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/hideErrorButton"/>
@@ -79,7 +109,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Hide Errors"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/showErrorButton"
         app:layout_constraintRight_toRightOf="parent"/>
