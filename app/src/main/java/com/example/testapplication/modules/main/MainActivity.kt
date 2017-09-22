@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.testapplication.R
+import com.example.testapplication.modules.bird.BirdActivity
 import com.example.testapplication.modules.expandablelist.ExpandableListActivity
 import com.example.testapplication.modules.flexboxlist.FlexBoxListActivity
 import com.example.testapplication.modules.simplelist.SimpleListActivity
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         showTextViewsButton.onClick { startActivity<TextViewsActivity>() }
         showTexBoxesButton.onClick { startActivity<TextBoxesActivity>() }
         showExpandableListButton.onClick { startActivity<ExpandableListActivity>() }
+        birdButton.onClick { startActivity<BirdActivity>() }
 
         openFileDirectoryButton.onClick {
             startActivity(Intent(DownloadManager.ACTION_VIEW_DOWNLOADS))

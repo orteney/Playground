@@ -51,6 +51,8 @@
         android:text="Show Expandable List"/>
 
     <Button
+        android:id="@+id/birdButton"
+        android:text="I am bird"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

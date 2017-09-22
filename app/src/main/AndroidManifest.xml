@@ -53,6 +53,10 @@
             android:name=".modules.expandablelist.ExpandableListActivity"
             android:label="ExpandableList"/>
 
+        <activity
+            android:name=".modules.bird.BirdActivity"
+            android:label="I'm a bird"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts"/>

@@ -62,7 +62,7 @@ class ExpandableListActivity : AppCompatActivity(), ExpandableListAdapter.Intera
             id = UUID.randomUUID().toString(),
             title = "Title",
             subTitle = "SubTitle",
-            items = (0 until random.nextInt(10)).map { randomParcelModel() }
+            items = (0 until random.nextInt(3)).map { randomParcelModel() }
         )
     }
 
