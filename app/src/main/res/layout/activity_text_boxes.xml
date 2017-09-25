@@ -8,7 +8,7 @@
     <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
         android:id="@+id/firstTextBox"
         android:layout_width="0dp"
-        android:layout_height="90dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -31,7 +31,7 @@
     <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
         android:id="@+id/secondTextBox"
         android:layout_width="0dp"
-        android:layout_height="90dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -53,7 +53,7 @@
     <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
         android:id="@+id/prefixTextBox"
         android:layout_width="0dp"
-        android:layout_height="90dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -75,7 +75,7 @@
     <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
         android:id="@+id/suffixTextBox"
         android:layout_width="0dp"
-        android:layout_height="90dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
