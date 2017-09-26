@@ -57,6 +57,10 @@
             android:name=".modules.bird.BirdActivity"
             android:label="I'm a bird"/>
 
+        <activity
+            android:name=".modules.expandableText.ExpandableTextActivity"
+            android:label="Expandable Text"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts"/>
