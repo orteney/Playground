@@ -10,50 +10,69 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.TextView
 import com.example.testapplication.R
+import org.jetbrains.anko.bottomPadding
 import org.jetbrains.anko.sdk19.listeners.onClick
 
 
-class ExpandableTextView : TextView {
-
-    private var bottomPadding = 0
+class ExpandableTextView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0) : TextView(context, attrs, defStyleAttr) {
 
     private val expandedLinesCount = Int.MAX_VALUE
     private val collapsedLinesCount = 2
     private val animationDurationMillis = 300L
 
     private val expandAnim: AnimatedVectorDrawableCompat by lazy {
-        AnimatedVectorDrawableCompat.create(context, R.drawable.avd_checkable_expandcollapse_collapsed_to_expanded)!!
+        val animateDrawable = AnimatedVectorDrawableCompat.create(context, R.drawable.avd_checkable_expandcollapse_collapsed_to_expanded)
+        checkNotNull(animateDrawable) { "AnimatedVectorDrawableCompat resource parsing error" }
     }
 
     private val collapseAnim: AnimatedVectorDrawableCompat by lazy {
-        AnimatedVectorDrawableCompat.create(context, R.drawable.avd_checkable_expandcollapse_expanded_to_collapsed)!!
+        val animateDrawable = AnimatedVectorDrawableCompat.create(context, R.drawable.avd_checkable_expandcollapse_expanded_to_collapsed)
+        checkNotNull(animateDrawable) { "AnimatedVectorDrawableCompat resource parsing error" }
     }
-
-    private var descriptionCollapsedHeight: Int = 0
 
     private val isEllipsized get() = lineCount > collapsedLinesCount
 
-    constructor(context: Context?) : super(context)
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
-        obtainAttributes(attrs)
-    }
-
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        obtainAttributes(attrs)
-    }
+    private var shouldRelayout = true
+    private var descriptionCollapsedHeight: Int = 0
+    private var attributePadding: Int = 0
 
     init {
         ellipsize = TextUtils.TruncateAt.END
         maxLines = collapsedLinesCount
         isClickable = false
         onClick { toggleExpansion() }
+
+        attributePadding = bottomPadding
     }
 
-    private fun obtainAttributes(attrs: AttributeSet?) {
-        val attributes = intArrayOf(android.R.attr.paddingBottom)
-        val arr = context.obtainStyledAttributes(attrs, attributes)
-        bottomPadding = arr.getDimensionPixelOffset(0, 0)
-        arr.recycle()
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        if (!shouldRelayout) return super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+
+        shouldRelayout = false
+        maxLines = expandedLinesCount
+        isClickable = false
+        setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
+
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+
+        if (isEllipsized) {
+            maxLines = collapsedLinesCount
+            updateArrowState(false, false)
+            isClickable = true
+            updateBottomPadding(true)
+        } else {
+            updateBottomPadding(false)
+        }
+
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+    }
+
+    override fun setText(text: CharSequence?, type: BufferType?) {
+        shouldRelayout = true
+        super.setText(text, type)
     }
 
     private fun updateArrowState(shouldExpand: Boolean, animated: Boolean = true) {
@@ -77,6 +96,7 @@ class ExpandableTextView : TextView {
         }
 
         maxLines = if (!isExpandedNow) expandedLinesCount else collapsedLinesCount
+
         measure(
             View.MeasureSpec.makeMeasureSpec(measuredWidth, View.MeasureSpec.EXACTLY),
             View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
@@ -101,39 +121,19 @@ class ExpandableTextView : TextView {
                     isClickable = true
                 }
 
-                override fun onAnimationCancel(animation: Animator) {}
-
-                override fun onAnimationRepeat(animation: Animator) {}
+                override fun onAnimationCancel(animation: Animator) = Unit
+                override fun onAnimationRepeat(animation: Animator) = Unit
             })
 
             interpolator = FastOutSlowInInterpolator()
-
             duration = animationDurationMillis
 
             start()
         }
     }
 
-    override fun setText(text: CharSequence?, type: BufferType?) {
-        maxLines = expandedLinesCount
-
-        super.setText(text, type)
-
-        if (isEllipsized) {
-            maxLines = collapsedLinesCount
-            updateArrowState(false, false)
-            isClickable = true
-            updateBottomPadding(true)
-        } else {
-            isClickable = false
-            setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
-            updateBottomPadding(false)
-        }
-    }
-
     private fun updateBottomPadding(isBottomDrawableVisible: Boolean) {
-        val newPaddingBottom = if (!isBottomDrawableVisible) bottomPadding else bottomPadding - compoundDrawablePadding
-
+        val newPaddingBottom = if (!isBottomDrawableVisible) attributePadding else attributePadding - compoundDrawablePadding
         setPadding(paddingLeft, paddingTop, paddingRight, newPaddingBottom)
     }
 }
