@@ -38,8 +38,7 @@
 
         <activity
             android:name=".modules.textarea.TextAreaActivity"
-            android:label="TextArea"
-            android:theme="@style/DarkTheme"/>
+            android:label="TextArea"/>
 
         <activity
             android:name=".modules.textviews.TextViewsActivity"
@@ -60,6 +59,22 @@
         <activity
             android:name=".modules.expandableText.ExpandableTextActivity"
             android:label="Expandable Text"/>
+
+        <activity
+            android:name=".modules.staggeredanimations.StaggeredAnimationsActivity"
+            android:label="Staggered Animations"/>
+
+        <activity
+            android:name=".modules.currency.CurrencyActivity"
+            android:label="Currency"/>
+
+        <activity
+            android:name=".modules.easyimage.EasyImageActivity"
+            android:label="Easy Image"/>
+
+        <activity
+            android:name=".modules.customtoggles.CustomToggleActivity"
+            android:label="Custom Toggles"/>
 
         <meta-data
             android:name="preloaded_fonts"

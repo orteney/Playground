@@ -6,10 +6,14 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.testapplication.R
 import com.example.testapplication.modules.bird.BirdActivity
+import com.example.testapplication.modules.currency.CurrencyActivity
+import com.example.testapplication.modules.customtoggles.CustomToggleActivity
+import com.example.testapplication.modules.easyimage.EasyImageActivity
 import com.example.testapplication.modules.expandableText.ExpandableTextActivity
 import com.example.testapplication.modules.expandablelist.ExpandableListActivity
 import com.example.testapplication.modules.flexboxlist.FlexBoxListActivity
 import com.example.testapplication.modules.simplelist.SimpleListActivity
+import com.example.testapplication.modules.staggeredanimations.StaggeredAnimationsActivity
 import com.example.testapplication.modules.textarea.TextAreaActivity
 import com.example.testapplication.modules.textboxes.TextBoxesActivity
 import com.example.testapplication.modules.textviews.TextViewsActivity
@@ -35,6 +39,10 @@ class MainActivity : AppCompatActivity() {
         showExpandableListButton.onClick { startActivity<ExpandableListActivity>() }
         birdButton.onClick { startActivity<BirdActivity>() }
         expandableTextButton.onClick { startActivity<ExpandableTextActivity>() }
+        staggeredAnimationsButton.onClick { startActivity<StaggeredAnimationsActivity>() }
+        currencyButton.onClick { startActivity<CurrencyActivity>() }
+        easyImageButton.onClick { startActivity<EasyImageActivity>() }
+        customTogglesButton.onClick { startActivity<CustomToggleActivity>() }
 
         openFileDirectoryButton.onClick {
             startActivity(Intent(DownloadManager.ACTION_VIEW_DOWNLOADS))

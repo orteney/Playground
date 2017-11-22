@@ -12,7 +12,7 @@ import com.example.testapplication.common.Layout
 
 abstract class BaseFragment : MvpAppCompatFragment(), IBaseView {
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.d(name(), "onCreateView() called with: inflater = [$inflater], container = [$container], savedInstanceState = [$savedInstanceState]")
 
         val cls = javaClass

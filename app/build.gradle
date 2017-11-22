@@ -4,12 +4,12 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 27
+    buildToolsVersion '27.0.1'
     defaultConfig {
         applicationId "com.example.testapplication"
         minSdkVersion 18
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -32,7 +32,7 @@ androidExtensions {
 }
 
 ext {
-    supportVersion = '26.0.2'
+    supportVersion = '27.0.1'
 
     rxjava2Version = '2.1.0'
     rxkotlinVersion = '2.1.0'
@@ -59,53 +59,62 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     // Support
-    compile "com.android.support:appcompat-v7:$supportVersion"
-    compile "com.android.support:cardview-v7:$supportVersion"
-    compile "com.android.support:design:$supportVersion"
-    compile "com.android.support:support-compat:$supportVersion"
-    compile "com.android.support:support-dynamic-animation:$supportVersion"
+    implementation "com.android.support:appcompat-v7:$supportVersion"
+    implementation "com.android.support:cardview-v7:$supportVersion"
+    implementation "com.android.support:design:$supportVersion"
+    implementation "com.android.support:support-compat:$supportVersion"
+    implementation "com.android.support:support-dynamic-animation:$supportVersion"
+    implementation "com.android.support:transition:$supportVersion"
 
     // Anko
-    compile "org.jetbrains.anko:anko-commons:$ankoVersion"
-    compile "org.jetbrains.anko:anko-design:$ankoVersion"
-    compile "org.jetbrains.anko:anko-design-listeners:$ankoVersion"
-    compile "org.jetbrains.anko:anko-appcompat-v7-commons:$ankoVersion"
-    compile "org.jetbrains.anko:anko-appcompat-v7-listeners:$ankoVersion"
-    compile "org.jetbrains.anko:anko-sdk19:$ankoVersion"
-    compile "org.jetbrains.anko:anko-sdk19-listeners:$ankoVersion"
+    implementation "org.jetbrains.anko:anko-commons:$ankoVersion"
+    implementation "org.jetbrains.anko:anko-design:$ankoVersion"
+    implementation "org.jetbrains.anko:anko-design-listeners:$ankoVersion"
+    implementation "org.jetbrains.anko:anko-appcompat-v7-commons:$ankoVersion"
+    implementation "org.jetbrains.anko:anko-appcompat-v7-listeners:$ankoVersion"
+    implementation "org.jetbrains.anko:anko-sdk19:$ankoVersion"
+    implementation "org.jetbrains.anko:anko-sdk19-listeners:$ankoVersion"
 
     // Kotlin
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // Rx
-    compile "io.reactivex.rxjava2:rxandroid:$rxandroid2Version"
-    compile "io.reactivex.rxjava2:rxjava:$rxjava2Version"
-    compile "io.reactivex.rxjava2:rxkotlin:$rxkotlinVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid2Version"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava2Version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlinVersion"
 
     // DI
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
-    compile "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger:$daggerVersion"
     provided "javax.annotation:jsr250-api:$javaxAnnatationVersion"
 
     // Navigation
-    compile "ru.terrakok.cicerone:cicerone:$ciceroneVersion"
+    implementation "ru.terrakok.cicerone:cicerone:$ciceroneVersion"
 
     // MVP
-    compile "com.arello-mobile:moxy:$moxyVersion"
-    compile "com.arello-mobile:moxy-app-compat:$moxyVersion"
+    implementation "com.arello-mobile:moxy:$moxyVersion"
+    implementation "com.arello-mobile:moxy-app-compat:$moxyVersion"
     kapt "com.arello-mobile:moxy-compiler:$moxyVersion"
 
     // Layouts
-    compile 'com.google.android:flexbox:0.3.0'
-    compile 'com.android.support.constraint:constraint-layout:1.1.0-beta1'
-    compile 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+    implementation 'com.google.android:flexbox:0.3.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta3'
+    implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+    implementation 'com.bartoszlipinski.constraint:staggeredanimationgroup:1.0.0'
 
     // UI
-    compile 'com.github.HITGIF:TextFieldBoxes:1.3.3'
+    implementation 'com.github.HITGIF:TextFieldBoxes:1.3.6'
+    implementation 'com.github.BlacKCaT27:CurrencyEditText:2.0.2'
+    implementation 'me.rishabhkhanna:CustomToggle:1.0.0'
+
+    // Images
+    implementation 'com.github.jkwiecien:EasyImage:2.0.3'
+    kapt 'com.github.bumptech.glide:compiler:4.2.0'
+    implementation 'com.github.bumptech.glide:glide:4.2.0'
 
     // Test
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 }
