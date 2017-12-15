@@ -76,4 +76,9 @@
         style="@style/MainMenuButton"
         android:text="Custom Toggles"/>
 
+    <Button
+        android:id="@+id/keyframeAnimationButton"
+        style="@style/MainMenuButton"
+        android:text="Keyframe Animation"/>
+
 </com.google.android.flexbox.FlexboxLayout>

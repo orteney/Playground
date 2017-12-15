@@ -76,6 +76,10 @@
             android:name=".modules.customtoggles.CustomToggleActivity"
             android:label="Custom Toggles"/>
 
+        <activity
+            android:name=".modules.keyframeanimation.KeyframeAnimationActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts"/>
