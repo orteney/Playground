@@ -14,71 +14,76 @@
     <Button
         android:id="@+id/showListButton"
         style="@style/MainMenuButton"
-        android:text="Show list with awesome animations pls"/>
+        android:text="Show list with awesome animations pls" />
 
     <Button
         android:id="@+id/showFlexBoxListButton"
         style="@style/MainMenuButton"
-        android:text="Show FlexBox list"/>
+        android:text="Show FlexBox list" />
 
     <Button
         android:id="@+id/showTextAreaButton"
         style="@style/MainMenuButton"
-        android:text="Show text areas"/>
+        android:text="Show text areas" />
 
     <Button
         android:id="@+id/showTextViewsButton"
         style="@style/MainMenuButton"
-        android:text="Show Text Views"/>
+        android:text="Show Text Views" />
 
     <Button
         android:id="@+id/openFileDirectoryButton"
         style="@style/MainMenuButton"
-        android:text="Open downloads directory"/>
+        android:text="Open downloads directory" />
 
     <Button
         android:id="@+id/showTexBoxesButton"
         style="@style/MainMenuButton"
-        android:text="Show Text Boxes"/>
+        android:text="Show Text Boxes" />
 
     <Button
         android:id="@+id/showExpandableListButton"
         style="@style/MainMenuButton"
-        android:text="Show Expandable List"/>
+        android:text="Show Expandable List" />
 
     <Button
         android:id="@+id/birdButton"
         style="@style/MainMenuButton"
-        android:text="I am bird"/>
+        android:text="I am bird" />
 
     <Button
         android:id="@+id/expandableTextButton"
         style="@style/MainMenuButton"
-        android:text="Expandable Text"/>
+        android:text="Expandable Text" />
 
     <Button
         android:id="@+id/staggeredAnimationsButton"
         style="@style/MainMenuButton"
-        android:text="Staggered Animations Group"/>
+        android:text="Staggered Animations Group" />
 
     <Button
         android:id="@+id/currencyButton"
         style="@style/MainMenuButton"
-        android:text="Currency"/>
+        android:text="Currency" />
 
     <Button
         android:id="@+id/easyImageButton"
         style="@style/MainMenuButton"
-        android:text="EasyImage"/>
+        android:text="EasyImage" />
 
     <Button
         android:id="@+id/customTogglesButton"
         style="@style/MainMenuButton"
-        android:text="Custom Toggles"/>
+        android:text="Custom Toggles" />
 
     <Button
         android:id="@+id/keyframeAnimationButton"
         style="@style/MainMenuButton"
-        android:text="Keyframe Animation"/>
+        android:text="Keyframe Animation" />
+
+    <Button
+        android:id="@+id/fluidSliderButton"
+        style="@style/MainMenuButton"
+        android:text="Fluid Slider" />
 
 </com.google.android.flexbox.FlexboxLayout>

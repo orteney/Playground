@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.testapplication">
+    package="com.example.testapplication">
 
     <application
         android:name=".TestApplication"
@@ -17,72 +17,76 @@
             android:theme="@style/AppTheme.Splash">
 
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
             android:name=".modules.main.MainActivity"
-            android:label="Main"/>
+            android:label="Main" />
 
         <activity
             android:name=".modules.simplelist.SimpleListActivity"
-            android:label="SimpleList"/>
+            android:label="SimpleList" />
 
         <activity
             android:name=".modules.flexboxlist.FlexBoxListActivity"
-            android:label="FlexibleList"/>
+            android:label="FlexibleList" />
 
         <activity
             android:name=".modules.textarea.TextAreaActivity"
-            android:label="TextArea"/>
+            android:label="TextArea" />
 
         <activity
             android:name=".modules.textviews.TextViewsActivity"
-            android:label="TextViews"/>
+            android:label="TextViews" />
 
         <activity
             android:name=".modules.textboxes.TextBoxesActivity"
-            android:label="TextBoxes"/>
+            android:label="TextBoxes" />
 
         <activity
             android:name=".modules.expandablelist.ExpandableListActivity"
-            android:label="ExpandableList"/>
+            android:label="ExpandableList" />
 
         <activity
             android:name=".modules.bird.BirdActivity"
-            android:label="I'm a bird"/>
+            android:label="I'm a bird" />
 
         <activity
             android:name=".modules.expandableText.ExpandableTextActivity"
-            android:label="Expandable Text"/>
+            android:label="Expandable Text" />
 
         <activity
             android:name=".modules.staggeredanimations.StaggeredAnimationsActivity"
-            android:label="Staggered Animations"/>
+            android:label="Staggered Animations" />
 
         <activity
             android:name=".modules.currency.CurrencyActivity"
-            android:label="Currency"/>
+            android:label="Currency" />
 
         <activity
             android:name=".modules.easyimage.EasyImageActivity"
-            android:label="Easy Image"/>
+            android:label="Easy Image" />
 
         <activity
             android:name=".modules.customtoggles.CustomToggleActivity"
-            android:label="Custom Toggles"/>
+            android:label="Custom Toggles" />
 
         <activity
             android:name=".modules.keyframeanimation.KeyframeAnimationActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".modules.fluidslider.FluidSliderActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts"/>
+            android:resource="@array/preloaded_fonts" />
 
     </application>
 
