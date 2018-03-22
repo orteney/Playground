@@ -12,6 +12,7 @@ import com.example.testapplication.modules.easyimage.EasyImageActivity
 import com.example.testapplication.modules.expandableText.ExpandableTextActivity
 import com.example.testapplication.modules.expandablelist.ExpandableListActivity
 import com.example.testapplication.modules.flexboxlist.FlexBoxListActivity
+import com.example.testapplication.modules.fluidslider.FluidSliderActivity
 import com.example.testapplication.modules.keyframeanimation.KeyframeAnimationActivity
 import com.example.testapplication.modules.simplelist.SimpleListActivity
 import com.example.testapplication.modules.staggeredanimations.StaggeredAnimationsActivity
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         easyImageButton.onClick { startActivity<EasyImageActivity>() }
         customTogglesButton.onClick { startActivity<CustomToggleActivity>() }
         keyframeAnimationButton.onClick { startActivity<KeyframeAnimationActivity>() }
+        fluidSliderButton.onClick { startActivity<FluidSliderActivity>() }
 
         openFileDirectoryButton.onClick {
             startActivity(Intent(DownloadManager.ACTION_VIEW_DOWNLOADS))
