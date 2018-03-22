@@ -16,9 +16,11 @@ import java.util.*
 @Layout(R.layout.activity_test)
 class SimpleListActivity : AppCompatActivity(), SimpleListAdapter.InteractionsListener {
 
-    private lateinit var adapter: SimpleListAdapter
-
     private val models = ArrayList<SimpleModel>()
+
+    private val adapter: SimpleListAdapter by lazy {
+        SimpleListAdapter(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,10 +75,13 @@ class SimpleListActivity : AppCompatActivity(), SimpleListAdapter.InteractionsLi
     }
 
     override fun onClick(model: SimpleModel) {
-        models.firstOrNull { it.id == model.id }?.let {
-            it.number++
-            updateData()
-        }
+        val index = models.indexOfFirst { it.id == model.id }
+        if (index < 0) return
+
+        val model = models[index]
+        models[index] = model.copy(number = model.number + 1)
+
+        updateData()
     }
 
     override fun onDeleteClick(model: SimpleModel) {
@@ -106,11 +111,10 @@ class SimpleListActivity : AppCompatActivity(), SimpleListAdapter.InteractionsLi
     }
 
     private fun updateData() {
-        adapter.setData(models)
+        adapter.submitList(models.toList())
     }
 
     private fun initViews() {
-        adapter = SimpleListAdapter(this)
         recyclerView.apply {
             layoutManager = LinearLayoutManager(this@SimpleListActivity)
             adapter = this@SimpleListActivity.adapter

@@ -1,15 +1,13 @@
 package com.example.testapplication.modules.simplelist
 
-import android.support.v7.util.DiffUtil
+import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.testapplication.R
 
-class SimpleListAdapter(private val listener: InteractionsListener? = null) : RecyclerView.Adapter<SimpleViewHolder>(),
-                                                                              ItemTouchHelperAdapter {
-
-    private var data = emptyList<SimpleModel>()
+class NewSimpleListAdapter(private val listener: SimpleListAdapter.InteractionsListener? = null) : ListAdapter<SimpleModel, SimpleViewHolder>(SimpleDiffItemCallback()),
+                                                                                                   ItemTouchHelperAdapter {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_simple, parent, false)
@@ -24,17 +22,7 @@ class SimpleListAdapter(private val listener: InteractionsListener? = null) : Re
     }
 
     override fun onBindViewHolder(holder: SimpleViewHolder, position: Int) {
-        holder.bind(data[position])
-    }
-
-    override fun getItemCount() = data.size
-
-    fun submitList(list: List<SimpleModel>) {
-        val diffUtilCallback = SimpleDiffCallback(data, list)
-        val diffResult = DiffUtil.calculateDiff(diffUtilCallback)
-
-        data = list
-        diffResult.dispatchUpdatesTo(this)
+        holder.bind(getItem(position))
     }
 
     override fun onItemDismiss(position: Int) {
@@ -57,12 +45,5 @@ class SimpleListAdapter(private val listener: InteractionsListener? = null) : Re
             viewHolder.isInteractionActive = false
             viewHolder.animateToDefaultElevation()
         }
-    }
-
-    interface InteractionsListener {
-        fun onClick(model: SimpleModel)
-        fun onDeleteClick(model: SimpleModel)
-        fun onItemSwiped(position: Int)
-        fun onItemMoved(fromPosition: Int, toPosition: Int)
     }
 }
