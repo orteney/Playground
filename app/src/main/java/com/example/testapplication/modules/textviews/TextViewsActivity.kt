@@ -14,6 +14,10 @@ class TextViewsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_text_views)
 
+        val list = listOf<Int>()
+
+        list.joinToString(separator = " ") { (it+1).toString() }
+
         initViews()
     }
 

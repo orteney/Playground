@@ -9,7 +9,6 @@ import ru.terrakok.cicerone.commands.BackTo
 class BaseAppRouter : Router() {
 
     fun backToWithActionResult(screenKey: String?, action: String, data: Bundle) {
-        executeCommand(PerformAction(action, data))
-        executeCommand(BackTo(screenKey))
+        executeCommands(PerformAction(action, data), BackTo(screenKey))
     }
 }

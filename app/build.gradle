@@ -32,23 +32,25 @@ androidExtensions {
 }
 
 ext {
-    supportVersion = '27.0.1'
+    supportVersion = '27.1.0'
 
-    rxjava2Version = '2.1.0'
+    rxjavaVersion = '2.1.0'
     rxkotlinVersion = '2.1.0'
-    rxandroid2Version = '2.0.1'
-    ankoVersion = '0.10.1'
+    rxandroidVersion = '2.0.1'
+    rxrelayVersion = '2.0.0'
 
-    daggerVersion = '2.11'
-    javaxAnnatationVersion = '1.0'
+    ankoVersion = '0.10.4'
+
+    daggerVersion = '2.14.1'
 
     moxyVersion = '1.5.3'
-    ciceroneVersion = '2.0.0'
+    ciceroneVersion = '3.0.0'
 
-    okhttpVersion = '3.4.1'
+    okhttpVersion = '3.10.0'
     retrofitVersion = '2.3.0'
+    gsonVersion = '2.8.2'
 
-    glideVersion = '3.7.0'
+    glideVersion = '4.6.1'
 
     junitVersion = '4.12'
     mockitoVersion = '2.8.9'
@@ -56,7 +58,7 @@ ext {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Support
     implementation "com.android.support:appcompat-v7:$supportVersion"
@@ -78,15 +80,25 @@ dependencies {
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    // Rx
-    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid2Version"
-    implementation "io.reactivex.rxjava2:rxjava:$rxjava2Version"
+    // RxJava + RxKotlin
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
     implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlinVersion"
+    implementation "com.jakewharton.rxrelay2:rxrelay:$rxrelayVersion"
 
-    // DI
+    // Dependency Injection
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
     implementation "com.google.dagger:dagger:$daggerVersion"
-    provided "javax.annotation:jsr250-api:$javaxAnnatationVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+
+//    // Network
+//    implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+//    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+//    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+//    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+//    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+//    implementation "com.google.code.gson:gson:$gsonVersion"
 
     // Navigation
     implementation "ru.terrakok.cicerone:cicerone:$ciceroneVersion"
@@ -98,7 +110,7 @@ dependencies {
 
     // Layouts
     implementation 'com.google.android:flexbox:0.3.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta3'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta5'
     implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
     implementation 'com.bartoszlipinski.constraint:staggeredanimationgroup:1.0.0'
 
@@ -109,8 +121,11 @@ dependencies {
 
     // Images
     implementation 'com.github.jkwiecien:EasyImage:2.0.3'
-    kapt 'com.github.bumptech.glide:compiler:4.2.0'
-    implementation 'com.github.bumptech.glide:glide:4.2.0'
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+
+    // Permissions wrapper
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
 
     // Test
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
