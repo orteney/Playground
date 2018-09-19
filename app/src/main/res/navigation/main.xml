@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.testapplication.ui.menu.MenuFragment"
+        android:label="MenuFragment">
+        <action
+            android:id="@+id/action_menuFragment_to_birdFragment"
+            app:destination="@id/birdFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_keyframeAnimationFragment"
+            app:destination="@id/keyframeAnimationFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_expandableListFragment"
+            app:destination="@id/expandableListFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_easyImageFragment"
+            app:destination="@id/easyImageFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_expandableTextFragment"
+            app:destination="@id/expandableTextFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_flexBoxListFragment"
+            app:destination="@id/flexBoxListFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_simpleListFragment"
+            app:destination="@id/simpleListFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_staggeredAnimationFragment"
+            app:destination="@id/staggeredAnimationFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_textViewsFragment"
+            app:destination="@id/textViewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/birdFragment"
+        android:name="com.example.testapplication.ui.bird.BirdFragment"
+        android:label="BirdFragment" />
+    <fragment
+        android:id="@+id/keyframeAnimationFragment"
+        android:name="com.example.testapplication.ui.keyframeanimation.KeyframeAnimationFragment"
+        android:label="KeyframeAnimationFragment" />
+    <fragment
+        android:id="@+id/easyImageFragment"
+        android:name="com.example.testapplication.ui.easyimage.EasyImageFragment"
+        android:label="EasyImageFragment" />
+    <fragment
+        android:id="@+id/expandableListFragment"
+        android:name="com.example.testapplication.ui.expandablelist.ExpandableListFragment"
+        android:label="ExpandableListFragment" />
+    <fragment
+        android:id="@+id/expandableTextFragment"
+        android:name="com.example.testapplication.ui.expandableText.ExpandableTextFragment"
+        android:label="ExpandableTextFragment" />
+    <fragment
+        android:id="@+id/flexBoxListFragment"
+        android:name="com.example.testapplication.ui.flexboxlist.FlexBoxListFragment"
+        android:label="FlexBoxListFragment" />
+    <fragment
+        android:id="@+id/simpleListFragment"
+        android:name="com.example.testapplication.ui.simplelist.SimpleListFragment"
+        android:label="SimpleListFragment" />
+    <fragment
+        android:id="@+id/staggeredAnimationFragment"
+        android:name="com.example.testapplication.ui.staggeredanimations.StaggeredAnimationFragment"
+        android:label="StaggeredAnimationFragment" />
+    <fragment
+        android:id="@+id/textViewsFragment"
+        android:name="com.example.testapplication.ui.textviews.TextViewsFragment"
+        android:label="TextViewsFragment" />
+</navigation>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.testapplication">
 
     <application
@@ -12,7 +13,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".modules.splash.SplashActivity"
+            android:name=".ui.MainActivity"
             android:noHistory="true"
             android:theme="@style/AppTheme.Splash">
 
@@ -23,66 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".modules.main.MainActivity"
-            android:label="Main" />
-
-        <activity
-            android:name=".modules.simplelist.SimpleListActivity"
-            android:label="SimpleList" />
-
-        <activity
-            android:name=".modules.flexboxlist.FlexBoxListActivity"
-            android:label="FlexibleList" />
-
-        <activity
-            android:name=".modules.textarea.TextAreaActivity"
-            android:label="TextArea" />
-
-        <activity
-            android:name=".modules.textviews.TextViewsActivity"
-            android:label="TextViews" />
-
-        <activity
-            android:name=".modules.textboxes.TextBoxesActivity"
-            android:label="TextBoxes" />
-
-        <activity
-            android:name=".modules.expandablelist.ExpandableListActivity"
-            android:label="ExpandableList" />
-
-        <activity
-            android:name=".modules.bird.BirdActivity"
-            android:label="I'm a bird" />
-
-        <activity
-            android:name=".modules.expandableText.ExpandableTextActivity"
-            android:label="Expandable Text" />
-
-        <activity
-            android:name=".modules.staggeredanimations.StaggeredAnimationsActivity"
-            android:label="Staggered Animations" />
-
-        <activity
-            android:name=".modules.currency.CurrencyActivity"
-            android:label="Currency" />
-
-        <activity
-            android:name=".modules.easyimage.EasyImageActivity"
-            android:label="Easy Image" />
-
-        <activity
-            android:name=".modules.customtoggles.CustomToggleActivity"
-            android:label="Custom Toggles" />
-
-        <activity
-            android:name=".modules.keyframeanimation.KeyframeAnimationActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
-            android:name=".modules.fluidslider.FluidSliderActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"

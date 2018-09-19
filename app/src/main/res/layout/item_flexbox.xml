@@ -7,7 +7,6 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:background="?attr/selectableItemBackground"
-    app:cardBackgroundColor="@color/colorAccent"
     app:cardCornerRadius="4dp"
     app:cardElevation="4dp">
 
@@ -16,7 +15,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:textColor="#FFFFFF"
         android:textSize="14dp"
         tools:text="ID"/>
 

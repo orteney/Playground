@@ -15,7 +15,7 @@
             android:rotation="135">
             <group android:translateY="3">
                 <path
-                    android:fillColor="@color/colorWhite"
+                    android:fillColor="@color/white"
                     android:pathData="M 1,-4 L 1,4 L -1,4 L -1,-4 Z"/>
             </group>
         </group>
@@ -24,7 +24,7 @@
             android:rotation="45">
             <group android:translateY="-3">
                 <path
-                    android:fillColor="@color/colorWhite"
+                    android:fillColor="@color/white"
                     android:pathData="M 1,-4 L 1,4 L -1,4 L -1,-4 Z"/>
             </group>
         </group>

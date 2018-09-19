@@ -1,89 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.flexbox.FlexboxLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingBottom="16dp"
-    app:alignContent="stretch"
-    app:alignItems="stretch"
-    app:flexWrap="wrap"
-    tools:context=".modules.main.MainActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/showListButton"
-        style="@style/MainMenuButton"
-        android:text="Show list with awesome animations pls" />
+    <fragment
+        android:id="@+id/my_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main" />
 
-    <Button
-        android:id="@+id/showFlexBoxListButton"
-        style="@style/MainMenuButton"
-        android:text="Show FlexBox list" />
-
-    <Button
-        android:id="@+id/showTextAreaButton"
-        style="@style/MainMenuButton"
-        android:text="Show text areas" />
-
-    <Button
-        android:id="@+id/showTextViewsButton"
-        style="@style/MainMenuButton"
-        android:text="Show Text Views" />
-
-    <Button
-        android:id="@+id/openFileDirectoryButton"
-        style="@style/MainMenuButton"
-        android:text="Open downloads directory" />
-
-    <Button
-        android:id="@+id/showTexBoxesButton"
-        style="@style/MainMenuButton"
-        android:text="Show Text Boxes" />
-
-    <Button
-        android:id="@+id/showExpandableListButton"
-        style="@style/MainMenuButton"
-        android:text="Show Expandable List" />
-
-    <Button
-        android:id="@+id/birdButton"
-        style="@style/MainMenuButton"
-        android:text="I am bird" />
-
-    <Button
-        android:id="@+id/expandableTextButton"
-        style="@style/MainMenuButton"
-        android:text="Expandable Text" />
-
-    <Button
-        android:id="@+id/staggeredAnimationsButton"
-        style="@style/MainMenuButton"
-        android:text="Staggered Animations Group" />
-
-    <Button
-        android:id="@+id/currencyButton"
-        style="@style/MainMenuButton"
-        android:text="Currency" />
-
-    <Button
-        android:id="@+id/easyImageButton"
-        style="@style/MainMenuButton"
-        android:text="EasyImage" />
-
-    <Button
-        android:id="@+id/customTogglesButton"
-        style="@style/MainMenuButton"
-        android:text="Custom Toggles" />
-
-    <Button
-        android:id="@+id/keyframeAnimationButton"
-        style="@style/MainMenuButton"
-        android:text="Keyframe Animation" />
-
-    <Button
-        android:id="@+id/fluidSliderButton"
-        style="@style/MainMenuButton"
-        android:text="Fluid Slider" />
-
-</com.google.android.flexbox.FlexboxLayout>
+</FrameLayout>
