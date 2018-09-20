@@ -1,4 +1,4 @@
-package com.example.testapplication.modules.simplelist
+package com.example.testapplication.ui.simplelist
 
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
@@ -47,15 +47,15 @@ class SimpleListAdapter(private val listener: InteractionsListener? = null) : Re
 
     override fun onStartInteractions(viewHolder: RecyclerView.ViewHolder) {
         if (viewHolder is SimpleViewHolder) {
-            viewHolder.isInteractionActive = true
             viewHolder.animateToRiseElevation()
+            viewHolder.isInteractionActive = true
         }
     }
 
     override fun onCompleteInteractions(viewHolder: RecyclerView.ViewHolder) {
         if (viewHolder is SimpleViewHolder) {
-            viewHolder.isInteractionActive = false
             viewHolder.animateToDefaultElevation()
+            viewHolder.isInteractionActive = false
         }
     }
 

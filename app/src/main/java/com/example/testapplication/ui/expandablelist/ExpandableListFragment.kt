@@ -10,7 +10,7 @@ import com.example.testapplication.R
 import com.example.testapplication.modules.expandablelist.ExpandableListAdapter
 import com.example.testapplication.modules.expandablelist.ExpandableModel
 import com.example.testapplication.modules.expandablelist.ParcelModel
-import com.example.testapplication.modules.simplelist.SimpleModel
+import com.example.testapplication.ui.simplelist.SimpleModel
 import com.example.testapplication.ui.common.BaseFragment
 import kotlinx.android.synthetic.main.fragment_simple_list.*
 import java.util.ArrayList

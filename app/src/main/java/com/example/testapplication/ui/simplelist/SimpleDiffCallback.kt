@@ -1,10 +1,11 @@
-package com.example.testapplication.modules.simplelist
+package com.example.testapplication.ui.simplelist
 
 import android.support.v7.util.DiffUtil
 
 class SimpleDiffCallback(
     private val oldList: List<SimpleModel>,
-    private val newList: List<SimpleModel>) : DiffUtil.Callback() {
+    private val newList: List<SimpleModel>
+) : DiffUtil.Callback() {
 
     override fun getOldListSize(): Int {
         return oldList.size

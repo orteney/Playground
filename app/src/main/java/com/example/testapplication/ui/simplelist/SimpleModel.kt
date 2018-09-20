@@ -1,4 +1,4 @@
-package com.example.testapplication.modules.simplelist
+package com.example.testapplication.ui.simplelist
 
 data class SimpleModel(
     val id: String,

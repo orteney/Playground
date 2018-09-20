@@ -34,10 +34,12 @@ class MenuFragment : Fragment() {
     }
 
     private fun addNavigation(text: String, id: Int) {
-        (layoutInflater.inflate(R.layout.view_menu_botton, containerLayout) as MaterialButton)
+        val view = (layoutInflater.inflate(R.layout.view_menu_botton, null) as MaterialButton)
             .apply {
                 this.text = text
                 setOnClickListener(Navigation.createNavigateOnClickListener(id))
             }
+
+        containerLayout.addView(view)
     }
 }

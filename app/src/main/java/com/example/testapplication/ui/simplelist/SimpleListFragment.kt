@@ -2,18 +2,14 @@ package com.example.testapplication.ui.simplelist
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import com.example.testapplication.R
 import com.example.testapplication.extensions.swap
-import com.example.testapplication.modules.simplelist.SimpleItemTouchHelperCallback
-import com.example.testapplication.modules.simplelist.SimpleListAdapter
-import com.example.testapplication.modules.simplelist.SimpleModel
 import com.example.testapplication.ui.common.BaseFragment
 import kotlinx.android.synthetic.main.fragment_simple_list.*
+import org.jetbrains.anko.appcompat.v7.listeners.onMenuItemClick
 import java.util.ArrayList
 import java.util.Random
 import java.util.UUID
@@ -37,35 +33,40 @@ class SimpleListFragment : BaseFragment(), SimpleListAdapter.InteractionsListene
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = this@SimpleListFragment.adapter
+            addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    appBarLayout.isSelected = recyclerView.canScrollVertically(-1)
+                }
+            })
         }
 
         val callback = SimpleItemTouchHelperCallback(adapter)
         val touchHelper = ItemTouchHelper(callback)
         touchHelper.attachToRecyclerView(recyclerView)
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_simple, menu)
-    }
+        toolbar.apply {
+            inflateMenu(R.menu.menu_simple)
+            onMenuItemClick { item ->
+                when (item?.itemId) {
+                    R.id.menu_add -> {
+                        addItem()
+                        true
+                    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.menu_add -> {
-                addItem()
-                true
+                    R.id.menu_clear -> {
+                        clearAll()
+                        true
+                    }
+
+                    R.id.menu_sort -> {
+                        sort()
+                        true
+                    }
+
+                    else -> false
+                }
             }
-
-            R.id.menu_clear -> {
-                clearAll()
-                true
-            }
-
-            R.id.menu_sort -> {
-                sort()
-                true
-            }
-
-            else -> super.onOptionsItemSelected(item)
         }
     }
 

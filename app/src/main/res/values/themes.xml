@@ -11,10 +11,9 @@
         <item name="android:colorBackground">@color/background</item>
         <item name="android:colorForeground">@color/surface</item>
         <item name="colorError">@color/error</item>
-
     </style>
 
-    <style name="AppTheme.Splash" parent="AppTheme">
+    <style name="AppTheme.Splash">
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 

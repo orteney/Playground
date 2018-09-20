@@ -1,4 +1,4 @@
-package com.example.testapplication.modules.simplelist
+package com.example.testapplication.ui.simplelist
 
 import android.graphics.Typeface
 import android.support.animation.DynamicAnimation
@@ -31,9 +31,8 @@ class SimpleViewHolder(
 
     private lateinit var currentModel: SimpleModel
 
-    private val defaultElevation = 4f
     private val raisedElevation = 60f
-    private val minElevation = 1f
+    private val minElevation = 0f
     private val maxElevation = 100f
     private val zAnimation: SpringAnimation by lazy { initZAnimation() }
 
@@ -74,7 +73,7 @@ class SimpleViewHolder(
     }
 
     fun animateToDefaultElevation() {
-        zAnimation.animateToFinalPosition(defaultElevation)
+        zAnimation.animateToFinalPosition(0f)
     }
 
     fun animateToRiseElevation() {
@@ -105,7 +104,6 @@ class SimpleViewHolder(
         return SpringAnimation(cardView, DynamicAnimation.TRANSLATION_Z)
             .setMinValue(minElevation)
             .setMaxValue(maxElevation)
-            .setStartValue(defaultElevation)
             .setSpring(
                 SpringForce()
                     .setDampingRatio(SpringForce.DAMPING_RATIO_HIGH_BOUNCY)

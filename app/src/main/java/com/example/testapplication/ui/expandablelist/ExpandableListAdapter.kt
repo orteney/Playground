@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.testapplication.R
-import com.example.testapplication.modules.simplelist.SimpleModel
+import com.example.testapplication.ui.simplelist.SimpleModel
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_expandable.*
 import java.util.*
