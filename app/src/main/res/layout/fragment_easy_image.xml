@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,7 +17,7 @@
 
     <com.google.android.flexbox.FlexboxLayout
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:alignContent="stretch"
         app:alignItems="stretch"
@@ -29,14 +29,14 @@
 
         <Button
             android:id="@+id/cameraButton"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            style="?attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Camera"/>
 
         <Button
             android:id="@+id/galleryButton"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            style="?attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gallery"
@@ -44,7 +44,7 @@
 
         <Button
             android:id="@+id/documentsButton"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            style="?attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Documents"
@@ -52,7 +52,7 @@
 
         <Button
             android:id="@+id/chooserDocumentsButton"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            style="?attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chooser With Documents"
@@ -60,12 +60,11 @@
 
         <Button
             android:id="@+id/chooserGalleryButton"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            style="?attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chooser With Gallery"
             tools:layout_editor_absoluteY="219dp"/>
 
     </com.google.android.flexbox.FlexboxLayout>
-
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

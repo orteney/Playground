@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.testapplication">
+    package="com.orteney.playground">
 
     <application
-        android:name=".TestApplication"
+        android:name="com.orteney.playground.TestApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.orteney.playground.ui.MainActivity"
             android:noHistory="true"
             android:theme="@style/AppTheme.Splash">
 

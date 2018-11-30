@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Default-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="black12">#1F000000</color>
+    <color name="black50">#80000000</color>
+
     <!--Theme colors-->
     <color name="primary">#6200EE</color>
     <color name="primaryVariant">#3700B3</color>
@@ -8,17 +14,13 @@
     <color name="background">#FFFFFF</color>
     <color name="surface">#FFFFFF</color>
     <color name="error">#C51162</color>
-
     <color name="onPrimary">#FFFFFF</color>
     <color name="onSecondary">#000000</color>
     <color name="onBackground">#000000</color>
     <color name="onSurface">#000000</color>
     <color name="onError">#FFFFFF</color>
 
-    <!--Default-->
-    <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
-    <color name="black50">#80000000</color>
+    <color name="dividerColor">@color/black12</color>
 
     <!--Views colors-->
     <color name="disabled">#666666</color>

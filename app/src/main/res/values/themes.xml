@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primaryVariant</item>
-        <item name="colorSecondary">@color/secondary</item>
-        <item name="colorAccent">@color/secondaryVariant</item>
+        <item name="colorPrimaryVariant">@color/primaryVariant</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
 
-        <item name="android:windowBackground">@color/background</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondaryVariant</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
+
         <item name="android:colorBackground">@color/background</item>
-        <item name="android:colorForeground">@color/surface</item>
+        <item name="colorOnBackground">@color/onBackground</item>
+
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/onSurface</item>
+
         <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/onError</item>
+
+        <item name="actionBarTheme">@style/ThemeOverlay.MaterialComponents.ActionBar.Surface</item>
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Surface</item>
+
+        <!-- Custom app attributes -->
+        <item name="mainMenuButtonStyle">@style/Widget.MaterialComponents.Button.OutlinedButton</item>
     </style>
+
+    <style name="AppTheme" parent="BaseAppTheme" />
 
     <style name="AppTheme.Splash">
         <item name="android:windowBackground">@drawable/splash_screen</item>

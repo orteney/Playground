@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.example.testapplication.ui.menu.MenuFragment"
+        android:name="com.orteney.playground.ui.menu.MenuFragment"
         android:label="MenuFragment">
         <action
             android:id="@+id/action_menuFragment_to_birdFragment"
@@ -35,41 +35,48 @@
         <action
             android:id="@+id/action_menuFragment_to_textViewsFragment"
             app:destination="@id/textViewsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_chipsFragment"
+            app:destination="@id/chipsFragment" />
     </fragment>
     <fragment
         android:id="@+id/birdFragment"
-        android:name="com.example.testapplication.ui.bird.BirdFragment"
+        android:name="com.orteney.playground.ui.bird.BirdFragment"
         android:label="BirdFragment" />
     <fragment
         android:id="@+id/keyframeAnimationFragment"
-        android:name="com.example.testapplication.ui.keyframeanimation.KeyframeAnimationFragment"
+        android:name="com.orteney.playground.ui.keyframeanimation.KeyframeAnimationFragment"
         android:label="KeyframeAnimationFragment" />
     <fragment
         android:id="@+id/easyImageFragment"
-        android:name="com.example.testapplication.ui.easyimage.EasyImageFragment"
+        android:name="com.orteney.playground.ui.easyimage.EasyImageFragment"
         android:label="EasyImageFragment" />
     <fragment
         android:id="@+id/expandableListFragment"
-        android:name="com.example.testapplication.ui.expandablelist.ExpandableListFragment"
+        android:name="com.orteney.playground.ui.expandablelist.ExpandableListFragment"
         android:label="ExpandableListFragment" />
     <fragment
         android:id="@+id/expandableTextFragment"
-        android:name="com.example.testapplication.ui.expandableText.ExpandableTextFragment"
+        android:name="com.orteney.playground.ui.expandableText.ExpandableTextFragment"
         android:label="ExpandableTextFragment" />
     <fragment
         android:id="@+id/flexBoxListFragment"
-        android:name="com.example.testapplication.ui.flexboxlist.FlexBoxListFragment"
+        android:name="com.orteney.playground.ui.flexboxlist.FlexBoxListFragment"
         android:label="FlexBoxListFragment" />
     <fragment
         android:id="@+id/simpleListFragment"
-        android:name="com.example.testapplication.ui.simplelist.SimpleListFragment"
+        android:name="com.orteney.playground.ui.simplelist.SimpleListFragment"
         android:label="SimpleListFragment" />
     <fragment
         android:id="@+id/staggeredAnimationFragment"
-        android:name="com.example.testapplication.ui.staggeredanimations.StaggeredAnimationFragment"
+        android:name="com.orteney.playground.ui.staggeredanimations.StaggeredAnimationFragment"
         android:label="StaggeredAnimationFragment" />
     <fragment
         android:id="@+id/textViewsFragment"
-        android:name="com.example.testapplication.ui.textviews.TextViewsFragment"
+        android:name="com.orteney.playground.ui.textviews.TextViewsFragment"
         android:label="TextViewsFragment" />
+    <fragment
+        android:id="@+id/chipsFragment"
+        android:name="com.orteney.playground.ui.chips.ChipsFragment"
+        android:label="ChipsFragment" />
 </navigation>

@@ -1,7 +1,5 @@
 <resources>
 
-    <style name="AppTheme.WhiteAppBarOverlay" parent="ThemeOverlay.MaterialComponents.ActionBar">
-        <item name="colorPrimary">@color/white</item>
-    </style>
+
 
 </resources>

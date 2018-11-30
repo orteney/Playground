@@ -8,7 +8,7 @@
     tools:orientation="vertical"
     tools:parentTag="android.widget.LinearLayout">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/handlerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/vd_checkable_expandcollapse_collapsed"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <net.cachapa.expandablelayout.ExpandableLayout
         android:id="@+id/expandableLayout"
@@ -71,7 +71,7 @@
         app:el_duration="300"
         app:el_expanded="false">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/containerRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

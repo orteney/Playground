@@ -20,6 +20,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="chipsFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-934" />
+                            <option name="y" value="-183" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="easyImageFragment">
                     <value>
                       <LayoutPositions>
@@ -92,6 +104,11 @@
                         <option name="myPositions">
                           <map>
                             <entry key="action_menuFragment_to_birdFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_menuFragment_to_chipsFragment">
                               <value>
                                 <LayoutPositions />
                               </value>

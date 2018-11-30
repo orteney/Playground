@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -13,7 +12,7 @@
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view2"
@@ -23,7 +22,7 @@
         app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view1"/>
+        app:layout_constraintTop_toBottomOf="@+id/view1" />
 
     <View
         android:id="@+id/view3"
@@ -33,7 +32,7 @@
         app:layout_constraintBottom_toTopOf="@+id/view4"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2"/>
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
 
     <View
         android:id="@+id/view4"
@@ -43,7 +42,7 @@
         app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3"/>
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <View
         android:id="@+id/view5"
@@ -53,7 +52,7 @@
         app:layout_constraintBottom_toTopOf="@+id/view6"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view4"/>
+        app:layout_constraintTop_toBottomOf="@+id/view4" />
 
     <View
         android:id="@+id/view6"
@@ -63,32 +62,36 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view5"/>
+        app:layout_constraintTop_toBottomOf="@+id/view5" />
 
     <com.bartoszlipinski.constraint.StaggeredAnimationGroup
         android:id="@+id/group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="view1, view2, view3, view4, view5, view6"/>
+        app:constraint_referenced_ids="view1, view2, view3, view4, view5, view6" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/hideButton"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        style="?attr/buttonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp"
         android:text="Hide"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/showButton"/>
+        app:layout_constraintRight_toLeftOf="@+id/showButton" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/showButton"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        style="?attr/buttonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
         android:text="Show"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/hideButton"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
