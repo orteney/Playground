@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.snackbar.Snackbar
 import com.orteney.playground.R
 import kotlinx.android.synthetic.main.fragment_menu.*
 
@@ -32,15 +33,22 @@ class MenuFragment : Fragment() {
         addNavigation("Text Views Fonts", R.id.action_menuFragment_to_textViewsFragment)
         addNavigation("Keyframe Animation", R.id.action_menuFragment_to_keyframeAnimationFragment)
         addNavigation("Chips", R.id.action_menuFragment_to_chipsFragment)
+
+        createButton("SnackBar").setOnClickListener {
+            view?.let { Snackbar.make(it, "I'm snackbar :3", Snackbar.LENGTH_SHORT).show() }
+        }
     }
 
     private fun addNavigation(text: String, id: Int) {
-        val view = (layoutInflater.inflate(R.layout.view_menu_button, null) as MaterialButton)
-            .apply {
-                this.text = text
-                setOnClickListener(Navigation.createNavigateOnClickListener(id))
-            }
+        createButton(text).setOnClickListener(Navigation.createNavigateOnClickListener(id))
+    }
 
-        containerLayout.addView(view)
+    private fun createButton(text: String): MaterialButton {
+        val button = MaterialButton(requireContext(), null, R.attr.mainMenuButtonStyle)
+        button.text = text
+
+        containerLayout.addView(button)
+
+        return button
     }
 }
