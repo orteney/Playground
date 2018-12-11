@@ -3,8 +3,8 @@
     <!--Default-->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="black12">#1F000000</color>
     <color name="black50">#80000000</color>
+    <color name="black12">#1F000000</color>
 
     <!--Theme colors-->
     <color name="primary">#6200EE</color>

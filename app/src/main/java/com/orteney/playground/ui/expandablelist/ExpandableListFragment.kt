@@ -2,6 +2,7 @@ package com.orteney.playground.ui.expandablelist
 
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.orteney.playground.R
 import com.orteney.playground.ui.common.BaseFragment
 import com.orteney.playground.ui.simplelist.SimpleModel
@@ -27,7 +28,7 @@ class ExpandableListFragment : BaseFragment(),
     private fun initViews() {
         adapter = ExpandableListAdapter(this)
         recyclerView.apply {
-            layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
+            layoutManager = LinearLayoutManager(context)
             adapter = this@ExpandableListFragment.adapter
         }
 

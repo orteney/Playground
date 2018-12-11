@@ -3,6 +3,7 @@ package com.orteney.playground.ui.simplelist
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.orteney.playground.R
 
 class SimpleListAdapter(
@@ -38,17 +39,15 @@ class SimpleListAdapter(
         listener?.onItemMoved(fromPosition, toPosition)
     }
 
-    override fun onStartInteractions(viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder) {
+    override fun onStartInteractions(viewHolder: RecyclerView.ViewHolder) {
         if (viewHolder is SimpleViewHolder) {
-            viewHolder.animateToRiseElevation()
-            viewHolder.isInteractionActive = true
+            viewHolder.onStartInteraction()
         }
     }
 
-    override fun onCompleteInteractions(viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder) {
+    override fun onCompleteInteractions(viewHolder: RecyclerView.ViewHolder) {
         if (viewHolder is SimpleViewHolder) {
-            viewHolder.animateToDefaultElevation()
-            viewHolder.isInteractionActive = false
+            viewHolder.onFinishInteraction()
         }
     }
 

@@ -37,7 +37,7 @@ class ParcelAdapter(
     class ViewHolder(
         override val containerView: View,
         private val listener: InteractionsListener?
-    ) : androidx.recyclerview.widget.RecyclerView.ViewHolder(containerView),
+    ) : RecyclerView.ViewHolder(containerView),
         LayoutContainer {
 
         private lateinit var currentModel: ParcelModel

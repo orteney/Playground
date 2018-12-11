@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
+import androidx.recyclerview.widget.RecyclerView
 import com.orteney.playground.R
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_simple.*
@@ -16,7 +17,7 @@ import kotlinx.android.synthetic.main.item_simple.*
 class SimpleViewHolder(
     override val containerView: View,
     private val listener: SimpleListAdapter.InteractionsListener?
-) : androidx.recyclerview.widget.RecyclerView.ViewHolder(containerView),
+) : RecyclerView.ViewHolder(containerView),
     LayoutContainer,
     View.OnTouchListener,
     View.OnClickListener {
@@ -24,14 +25,24 @@ class SimpleViewHolder(
     /*
     * Flag that used to prevent reset to default elevation when MotionEvent.ACTION_CANCEL appears onTouch stateChangeListener
     * */
-    var isInteractionActive = false
+    private var isInteractionActive = false
 
     private lateinit var currentModel: SimpleModel
 
     private val raisedElevation = 60f
     private val minElevation = 0f
     private val maxElevation = 100f
-    private val zAnimation: SpringAnimation by lazy { initZAnimation() }
+
+    private val zAnimation: SpringAnimation by lazy {
+        SpringAnimation(cardView, DynamicAnimation.TRANSLATION_Z)
+            .setMinValue(minElevation)
+            .setMaxValue(maxElevation)
+            .setSpring(
+                SpringForce()
+                    .setDampingRatio(SpringForce.DAMPING_RATIO_HIGH_BOUNCY)
+                    .setStiffness(SpringForce.STIFFNESS_LOW)
+            )
+    }
 
     init {
         cardView.setOnTouchListener(this)
@@ -69,12 +80,24 @@ class SimpleViewHolder(
         numberTextSwitcher.setText(number.toString())
     }
 
-    fun animateToDefaultElevation() {
-        zAnimation.animateToFinalPosition(0f)
+    fun onStartInteraction() {
+        isInteractionActive = true
+        animateToRiseElevation()
+        cardView.strokeColor = ContextCompat.getColor(containerView.context, R.color.primary)
     }
 
-    fun animateToRiseElevation() {
+    fun onFinishInteraction() {
+        isInteractionActive = false
+        animateToDefaultElevation()
+        cardView.strokeColor = ContextCompat.getColor(containerView.context, R.color.dividerColor)
+    }
+
+    private fun animateToRiseElevation() {
         zAnimation.animateToFinalPosition(raisedElevation)
+    }
+
+    private fun animateToDefaultElevation() {
+        zAnimation.animateToFinalPosition(0f)
     }
 
     override fun onClick(view: View) {
@@ -95,16 +118,5 @@ class SimpleViewHolder(
         }
 
         return false
-    }
-
-    private fun initZAnimation(): SpringAnimation {
-        return SpringAnimation(cardView, DynamicAnimation.TRANSLATION_Z)
-            .setMinValue(minElevation)
-            .setMaxValue(maxElevation)
-            .setSpring(
-                SpringForce()
-                    .setDampingRatio(SpringForce.DAMPING_RATIO_HIGH_BOUNCY)
-                    .setStiffness(SpringForce.STIFFNESS_LOW)
-            )
     }
 }

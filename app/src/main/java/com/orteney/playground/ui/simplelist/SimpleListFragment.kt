@@ -3,6 +3,7 @@ package com.orteney.playground.ui.simplelist
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.orteney.playground.R
 import com.orteney.playground.extensions.swap
 import com.orteney.playground.ui.common.BaseFragment
@@ -28,14 +29,8 @@ class SimpleListFragment : BaseFragment(), SimpleListAdapter.InteractionsListene
 
     private fun initViews() {
         recyclerView.apply {
-            layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
+            layoutManager = LinearLayoutManager(context)
             adapter = this@SimpleListFragment.adapter
-            addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
-                override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
-                    super.onScrolled(recyclerView, dx, dy)
-                    appBarLayout.isSelected = recyclerView.canScrollVertically(-1)
-                }
-            })
         }
 
         val callback = SimpleItemTouchHelperCallback(adapter)

@@ -6,12 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnticipateOvershootInterpolator
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.fragment.app.Fragment
 import androidx.transition.ChangeBounds
 import androidx.transition.TransitionManager
 import com.orteney.playground.R
 import kotlinx.android.synthetic.main.fragment_keyframe_animation_init.*
 
-class KeyframeAnimationFragment : androidx.fragment.app.Fragment() {
+class KeyframeAnimationFragment : Fragment() {
 
     private var isDisplayed = false
 

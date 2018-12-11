@@ -6,7 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.orteney.playground.R
-import kotlinx.android.synthetic.main.item_flexbox.view.*
+import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.item_flexbox.*
 import java.util.ArrayList
 
 class FlexBoxListAdapter(val onClick: ((model: FlexBoxModel) -> Unit)? = null) :
@@ -38,15 +39,20 @@ class FlexBoxListAdapter(val onClick: ((model: FlexBoxModel) -> Unit)? = null) :
     }
 
     class ViewHolder(
-        itemView: View,
-        val onClick: ((model: FlexBoxModel) -> Unit)?
-    ) : RecyclerView.ViewHolder(itemView) {
+        override val containerView: View,
+        private val onClick: ((model: FlexBoxModel) -> Unit)?
+    ) : RecyclerView.ViewHolder(containerView),
+        LayoutContainer {
+
+        private var model: FlexBoxModel? = null
+
+        init {
+            cardView.setOnClickListener { model?.let { onClick?.invoke(it) } }
+        }
 
         fun bind(testModel: FlexBoxModel) {
-            itemView.apply {
-                idTextView.text = testModel.text
-                setOnClickListener { onClick?.invoke(testModel) }
-            }
+            model = testModel
+            idTextView.text = testModel.text
         }
     }
 }

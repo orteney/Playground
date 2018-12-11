@@ -1,13 +1,12 @@
-package com.orteney.playground.modules.expandablelist
+package com.orteney.playground.ui.expandablelist
 
 import android.content.Context
-import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.orteney.playground.R
-import com.orteney.playground.ui.expandablelist.ParcelAdapter
-import com.orteney.playground.ui.expandablelist.ParcelModel
 import kotlinx.android.synthetic.main.view_expandable.view.*
 import net.cachapa.expandablelayout.ExpandableLayout
 
@@ -37,8 +36,7 @@ class ExpandableView : LinearLayout, ExpandableLayout.OnExpansionUpdateListener,
 
         // Init recycler view
         adapter = ParcelAdapter(this)
-        containerRecyclerView.layoutManager =
-            androidx.recyclerview.widget.LinearLayoutManager(context)
+        containerRecyclerView.layoutManager = LinearLayoutManager(context)
         containerRecyclerView.adapter = adapter
 
         // Init expandable handler

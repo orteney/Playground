@@ -7,14 +7,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.orteney.playground.R
 import com.orteney.playground.modules.expandablelist.ExpandableDiffCallback
-import com.orteney.playground.modules.expandablelist.ExpandableView
 import com.orteney.playground.ui.simplelist.SimpleModel
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_expandable.*
 import java.util.ArrayList
 
 class ExpandableListAdapter(private val listener: InteractionsListener? = null) :
-    androidx.recyclerview.widget.RecyclerView.Adapter<ExpandableListAdapter.ViewHolder>() {
+    RecyclerView.Adapter<ExpandableListAdapter.ViewHolder>() {
 
     private val data = ArrayList<ExpandableModel>()
 
