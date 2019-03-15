@@ -20,7 +20,7 @@ class EasyImageFragment : BaseFragment() {
     }
 
     private fun initViews() {
-        cameraButton.setOnClickListener { EasyImage.openCamera(this, 0) }
+        cameraButton.setOnClickListener { EasyImage.openCameraForImage(this, 0) }
         galleryButton.setOnClickListener { EasyImage.openGallery(this, 0) }
         documentsButton.setOnClickListener { EasyImage.openDocuments(this, 0) }
         chooserDocumentsButton.setOnClickListener { EasyImage.openChooserWithDocuments(this, "Documents", 0) }

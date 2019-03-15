@@ -1,10 +1,10 @@
 package com.orteney.playground.ui.chips
 
 import android.os.Bundle
-import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 import android.view.View
 import android.widget.ArrayAdapter
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import com.orteney.playground.R
 import com.orteney.playground.ui.common.BaseFragment
 import kotlinx.android.synthetic.main.fragment_chips.*
@@ -34,7 +34,7 @@ class ChipsFragment : BaseFragment() {
     private fun addChipToGroup(person: String, chipGroup: ChipGroup) {
         val chip = Chip(context)
         chip.text = person
-        chip.isCloseIconEnabled = true
+        chip.isCloseIconVisible = true
 
         // necessary to get single selection working
         chip.isClickable = true
