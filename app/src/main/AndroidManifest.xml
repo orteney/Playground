@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.orteney.playground">
 
     <application
@@ -14,7 +13,6 @@
 
         <activity
             android:name="com.orteney.playground.ui.MainActivity"
-            android:noHistory="true"
             android:theme="@style/AppTheme.Splash">
 
             <intent-filter>

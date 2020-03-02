@@ -18,17 +18,19 @@ class TextViewsFragment : BaseFragment() {
     }
 
     private fun initViews() {
-        addButton.setOnClickListener {
-            val button = MaterialButton(context).apply {
-                text = "Delete"
-                setOnClickListener { bottomLayout.removeView(this) }
-                layoutParams = FlexboxLayout.LayoutParams(
-                    FlexboxLayout.LayoutParams.MATCH_PARENT,
-                    FlexboxLayout.LayoutParams.WRAP_CONTENT
-                )
-            }
+        context?.let { context ->
+            addButton.setOnClickListener {
+                val button = MaterialButton(context).apply {
+                    text = "Delete"
+                    setOnClickListener { bottomLayout.removeView(this) }
+                    layoutParams = FlexboxLayout.LayoutParams(
+                        FlexboxLayout.LayoutParams.MATCH_PARENT,
+                        FlexboxLayout.LayoutParams.WRAP_CONTENT
+                    )
+                }
 
-            bottomLayout.addView(button)
+                bottomLayout.addView(button)
+            }
         }
     }
 }
